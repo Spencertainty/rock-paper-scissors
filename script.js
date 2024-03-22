@@ -1,7 +1,15 @@
-function getComputerChoice()
+function getComputerChoice(){
+    
+};
 
-function playerSelection()
+function playerSelection(){
 
-function computerSelection()
+};
 
-function playGame()
+function computerSelection(){
+
+};
+
+function playGame(){
+
+};
