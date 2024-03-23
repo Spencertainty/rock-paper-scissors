@@ -9,24 +9,48 @@ function getComputerChoice() {
 const computerChoice = getComputerChoice();
 console.log('Computer choice:', computerChoice);
 
-function playRound(playerSelection, computerSelection) {
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
 
-const playerChoice = playerSelection.toLowerCase();
-const computerChoice = computerSelection.toLowerCase();
+    for (let round = 1; round <= 5; round++) {
+        const playerChoice = prompt('Enter your choice (rock, paper, or scissors):');
+        const computerChoice = getComputerChoice();
 
-    if (playerChoice === computerChoice) {
-        return "It's a tie, shoot again!";
-    } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
-    ) {
-        return `Congrats, you won! ${playerSelection} beats ${computerSelection}`;
+        const result = playRound(playerChoice, computerChoice);
+        console.log(`Round ${round}: ${result}`);
+
+        if (result.startsWith('Congrats, you won!')) {
+            playerScore++;
+        } else if (result.startsWith('Sorry, you lose!')) {
+            computerScore++;
+        }
+    }
+
+    if (playerScore > computerScore) {
+        console.log('Winner Winner, Chicken Dinner!');
+    } else if (computerScore > playerScore) {
+        console.log('You let a computer beat you!');
     } else {
-        return `Sorry, you lose! ${computerSelection} beats ${playerSelection}`;
+        console.log("Time game, play another round!");
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        const playerChoice = playerSelection.toLowerCase();
+        const computerChoice = computerSelection.toLowerCase();
+
+        if (playerChoice === computerChoice) {
+            return "It's a tie, shoot again!";
+        } else if (
+            (playerChoice === 'rock' && computerChoice === 'scissors') ||
+            (playerChoice === 'paper' && computerChoice === 'rock') ||
+            (playerChoice === 'scissors' && computerChoice === 'paper')
+        ) {
+            return `Congrats, you won! ${playerSelection} beats ${computerSelection}`;
+        } else {
+            return `Sorry, you lose! ${computerSelection} beats ${playerSelection}`;
+        }
     }
 }
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+playGame();
