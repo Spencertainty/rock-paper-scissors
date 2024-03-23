@@ -10,8 +10,9 @@ const computerChoice = getComputerChoice();
 console.log('Computer choice:', computerChoice);
 
 function playRound(playerSelection, computerSelection) {
-    const playerChoice = playerSelection.toLowerCase();
-    const computerChoice = computerSelection.toLowerCase();
+
+const playerChoice = playerSelection.toLowerCase();
+const computerChoice = computerSelection.toLowerCase();
 
     if (playerChoice === computerChoice) {
         return "It's a tie, shoot again!";
@@ -25,3 +26,7 @@ function playRound(playerSelection, computerSelection) {
         return `Sorry, you lose! ${computerSelection} beats ${playerSelection}`;
     }
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
