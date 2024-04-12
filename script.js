@@ -13,7 +13,6 @@ function playGame() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let round = 1; round <= 5; round++) {
         const playerChoice = prompt('Enter your choice (rock, paper, or scissors):');
         const computerChoice = getComputerChoice();
 
@@ -25,7 +24,6 @@ function playGame() {
         } else if (result.startsWith('Sorry, you lose!')) {
             computerScore++;
         }
-    }
 
     if (playerScore > computerScore) {
         console.log('Winner Winner, Chicken Dinner!');
