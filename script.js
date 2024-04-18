@@ -46,6 +46,11 @@ function updateScore() {
     }
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+}
+
 document.getElementById('rock').addEventListener('click', function() {
     const result = playRound('rock', getComputerChoice());
     console.log(result);
