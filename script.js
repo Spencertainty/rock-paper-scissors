@@ -21,20 +21,5 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return `Sorry, you lose, try again! ${computerSelection} beats ${playerSelection}`;
     }
-ß}
+}
 
-const playerChoice = prompt('Enter your choice (rock, paper, or scissors):');
-const computerChoice = getComputerChoice();
-const result = playRound(playerChoice, computerChoice);
-    console.log(`Round ${round}: ${result}`);
-    
-
-    if (playerScore > computerScore) {
-        console.log('Winner Winner, Chicken Dinner!');
-    } else if (computerScore > playerScore) {
-        console.log('You let a computer beat you!');
-    } else {
-        console.log("Time game, play another round!");
-    }
-
-playGame();
