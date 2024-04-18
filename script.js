@@ -27,11 +27,11 @@ function playRound(playerSelection, computerSelection) {
         displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerChoice}.`);
     }
     updateScore();
-    firstThrow = false;
 }
 
 function displayResult(message) {
     if (firstThrow) {
+        firstThrow = false;
         while (resultsDiv.firstChild) {
             resultsDiv.removeChild(resultsDiv.firstChild);
         }
