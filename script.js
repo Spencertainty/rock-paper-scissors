@@ -13,11 +13,11 @@ function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
         
     if (playerChoice === computerChoice) {
-        return "It's a tie, shoot again!";
+        displayResult("It's a tie, shoot again!");
     } else if (
-        (playerChoice === 'rock' && computerChoice === 'scissors') ||
-        (playerChoice === 'paper' && computerChoice === 'rock') ||
-        (playerChoice === 'scissors' && computerChoice === 'paper')
+        (playerChoice === 'rock' && computerSelection === 'scissors') ||
+        (playerChoice === 'paper' && computerSelection === 'rock') ||
+        (playerChoice === 'scissors' && computerSelection === 'paper')
     ) {
         playerScore++;
         displayResult(`Congrats, you won this round! ${playerSelection} beats ${computerSelection}`);
