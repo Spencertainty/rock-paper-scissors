@@ -29,6 +29,23 @@ function playRound(playerSelection, computerSelection) {
     updateScore()
 }
 
+function displayResult(message) {
+    const resultMessage.textContent = message;
+    resultsDiv.appendChild(resultMessage);
+}
+
+function updateScore() {
+    scoreDiv.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
+
+    if (playerScore === 5) {
+        displayResult('Congrats, you have beaten a computer! You should feel good about yourself');
+        resetGame();
+    } else if (computerScore === 5) {
+        displayResult('You let a computer beat you - you should probably try again.');
+        resetGame();
+    }
+}
+
 document.getElementById('rock').addEventListener('click', function() {
     const result = playRound('rock', getComputerChoice());
     console.log(result);
