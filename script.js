@@ -20,9 +20,10 @@ function playRound(playerSelection, computerSelection) {
         (playerChoice === 'scissors' && computerSelection === 'paper')
     ) {
         playerScore++;
-        displayResult(`Congrats, you won this round! ${playerSelection} beats ${computerSelection}`);
+        displayResult(`Congrats, you won this round! ${playerChoice} beats ${computerSelection}`);
     } else {
-        displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerSelection}`);
+        computerScore++;
+        displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerChoice}`);
     }
 
     updateScore()
