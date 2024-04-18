@@ -39,7 +39,7 @@ function updateScore() {
     scoreDiv.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
 
     if (playerScore === 5) {
-        displayResult('Congrats, you have beaten a computer! You should feel good about yourself');
+        displayResult('Congrats, you\'ve beaten a computer! You should feel good about yourself.');
         resetGame();
     } else if (computerScore === 5) {
         displayResult('You let a computer beat you. Want to try again?');
