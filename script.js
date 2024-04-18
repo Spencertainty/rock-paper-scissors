@@ -23,3 +23,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+document.getElementById('rock').addEventListener('click', function() {
+    const result = playRound('rock', getComputerChoice());
+    console.log(result);
+});
+
+document.getElementById('paper').addEventListener('click', function() {
+    const result = playRound('paper', getComputerChoice());
+    console.log(result);
+});
+
+document.getElementById('scissors').addEventListener('click', function() {
+    const result = playRound('scissors', getComputerChoice());
+    console.log(result);
+});
