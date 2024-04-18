@@ -41,7 +41,7 @@ function updateScore() {
         displayResult('Congrats, you have beaten a computer! You should feel good about yourself');
         resetGame();
     } else if (computerScore === 5) {
-        displayResult('You let a computer beat you - you should probably try again.');
+        displayResult('You let a computer beat you. Want to try again?');
         resetGame();
     }
 }
