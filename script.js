@@ -6,18 +6,10 @@ function getComputerChoice() {
     return choices[randomIndex];
 }
 
+const playerChoice = prompt('Enter your choice (rock, paper, or scissors):');
 const computerChoice = getComputerChoice();
-console.log('Computer choice:', computerChoice);
-
-function playGame() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-        const playerChoice = prompt('Enter your choice (rock, paper, or scissors):');
-        const computerChoice = getComputerChoice();
-
-        const result = playRound(playerChoice, computerChoice);
-        console.log(`Round ${round}: ${result}`);
+const result = playRound(playerChoice, computerChoice);
+    console.log(`Round ${round}: ${result}`);
 
         if (result.startsWith('Congrats, you won!')) {
             playerScore++;
@@ -49,6 +41,5 @@ function playGame() {
             return `Sorry, you lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
-}
 
 playGame();
