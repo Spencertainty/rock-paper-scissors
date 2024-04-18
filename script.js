@@ -50,6 +50,9 @@ function updateScore() {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
+    while (resultsDiv.firstChild) {
+        resultsDiv.removeChild(resultsDiv.firstChild);
+    }
 }
 
 document.getElementById('rock').addEventListener('click', function() {
