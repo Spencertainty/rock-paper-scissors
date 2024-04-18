@@ -26,11 +26,12 @@ function playRound(playerSelection, computerSelection) {
         displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerChoice}`);
     }
 
-    updateScore()
+    updateScore();
 }
 
 function displayResult(message) {
-    const resultMessage.textContent = message;
+    const resultMessage = document.createElement('p');
+    resultMessage.textContent = message;
     resultsDiv.appendChild(resultMessage);
 }
 
