@@ -25,19 +25,23 @@ function playRound(playerSelection, computerSelection) {
         computerScore++;
         displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerChoice}.`);
     }
-
     updateScore();
 }
 
 function displayResult(message) {
+    if (playerScore + computerScore === 0) {
+        while (resultsDiv.firstChild) {
+            resultsDiv.removeChild(resultsDiv.firstChild);
+        }
+    }
     const resultMessage = document.createElement('p');
     resultMessage.textContent = message;
     resultsDiv.appendChild(resultMessage);
+    
 }
 
 function updateScore() {
     scoreDiv.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
-
     if (playerScore === 5) {
         displayResult('Congrats, you\'ve beaten a computer! You should feel good about yourself.');
         resetGame();
@@ -50,22 +54,16 @@ function updateScore() {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
-    while (resultsDiv.firstChild) {
-        resultsDiv.removeChild(resultsDiv.firstChild);
-    }
 }
 
 document.getElementById('rock').addEventListener('click', function() {
     const result = playRound('rock', getComputerChoice());
-    console.log(result);
 });
 
 document.getElementById('paper').addEventListener('click', function() {
     const result = playRound('paper', getComputerChoice());
-    console.log(result);
 });
 
 document.getElementById('scissors').addEventListener('click', function() {
     const result = playRound('scissors', getComputerChoice());
-    console.log(result);
 });
