@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let firstThrow = true;
 const resultsDiv = document.getElementById('results');
 const scoreDiv = document.getElementById('score');
 
@@ -26,18 +27,18 @@ function playRound(playerSelection, computerSelection) {
         displayResult(`Sorry, you lose, try again! ${computerSelection} beats ${playerChoice}.`);
     }
     updateScore();
+    firstThrow = false;
 }
 
 function displayResult(message) {
-    if (playerScore + computerScore < 2) {
+    if (firstThrow) {
         while (resultsDiv.firstChild) {
             resultsDiv.removeChild(resultsDiv.firstChild);
         }
     }
     const resultMessage = document.createElement('p');
     resultMessage.textContent = message;
-    resultsDiv.appendChild(resultMessage);
-    
+    resultsDiv.appendChild(resultMessage);    
 }
 
 function updateScore() {
@@ -52,6 +53,7 @@ function updateScore() {
 }
 
 function resetGame() {
+    firstThrow = true;
     playerScore = 0;
     computerScore = 0;
 }
