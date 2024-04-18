@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function displayResult(message) {
-    if (playerScore + computerScore === 0) {
+    if (playerScore + computerScore < 2) {
         while (resultsDiv.firstChild) {
             resultsDiv.removeChild(resultsDiv.firstChild);
         }
