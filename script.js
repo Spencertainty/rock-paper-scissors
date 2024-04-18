@@ -11,7 +11,6 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
-    const computerChoice = computerSelection.toLowerCase();
         
     if (playerChoice === computerChoice) {
         return "It's a tie, shoot again!";
