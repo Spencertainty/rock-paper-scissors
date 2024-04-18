@@ -12,7 +12,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     const playerChoice = playerSelection.toLowerCase();
         
-    if (playerChoice === computerChoice) {
+    if (playerChoice === computerSelection) {
         displayResult("It's a tie, shoot again!");
     } else if (
         (playerChoice === 'rock' && computerSelection === 'scissors') ||
